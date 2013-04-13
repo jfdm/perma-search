@@ -1,0 +1,171 @@
+<chapter id="transform">
+	<title>ResultsTransformer</title>
+	<sect1>
+		<title>Overview</title>
+		This chapter contains a user guide and tutorial for the
+		ResultsTransformer. The ResultsTransformer has been designed
+		transform the results file from the SearchSystem into the same
+		format as that used to represent the original list of
+		permutations.
+	</sect1>
+	<sect1>
+		<title>User Guide</title>
+		<sect2>
+			<title>Program Parameters</title>
+			The table below out lines the programs input.
+			<table frame='all'>
+				<caption>Program Parameters</caption>
+				<tgroup cols='2' align='center' colsep='1' rowsep='1'>
+					<thead>
+						<row>
+							<entry>flag</entry>
+							<entry>argument</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>-i</entry>
+							<entry>
+								The file containing the results.
+							</entry>
+						</row>
+						<row>
+							<entry>-s</entry>
+							<entry>
+								The name of the file to be used to store
+								the results of the transformation.
+							</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</sect2>
+		<sect2>
+			<title>Running the Program</title>
+			To run the program enter the following command followed by
+			the flag, variable pairs described in the previous section.
+			<programlisting format="linespecific">
+				<![CDATA[
+$ java -jar CS4099_MajorSP_transform.jar -i<name of file> 
+ -s<name of results file>
+			]]>
+			</programlisting>
+			When the program is running the console will display the
+			current progress of the transformation and the progress of
+			the saving of the results. The results of the transformation
+			can be found in the file specified at input and the programs
+			progress will also be found in the console output and a file
+			named log.txt
+		</sect2>
+	</sect1>
+	<sect1>
+		<title>Tutorial</title>
+		This tutorial will illustrate how to use the program to
+		transform the results of a search for a
+		<literal>6,5</literal>
+		code and save the results into a file called
+		<literal>recheck.txt</literal>
+		, where the input file is called
+		<literal>results.xml</literal>
+
+		Our program input will consist of the following:
+		<itemizedlist>
+			<listitem>
+				Input file name
+				<literal>results.xml</literal>
+			</listitem>
+			<listitem>
+				Results File name
+				<literal>recheck.txt</literal>
+			</listitem>
+		</itemizedlist>
+		The contents of the
+		<literal>results.xml</literal>
+		file is:
+		<programlisting format="linespecific">
+			<![CDATA[
+<?xml version='1.0' encoding='UTF-8'?>
+<OMOBJ>
+	<OMA>
+		<OMS name="pcodeinfo" cd="CS4099_MajorSP_openmath_cd"/>
+		<OMSTR>Size of Permutations</OMSTR>
+		<OMI>6</OMI>
+		<OMSTR>Hamming Distance</OMSTR>
+		<OMI>5</OMI>
+		<OMSTR>Number of Codewords Found</OMSTR>
+		<OMI>6</OMI>
+	</OMA>
+<OMA>
+	<OMS name="autogroupinfo" cd="CS4099_MajorSP_openmath_cd"/>
+	<OMSTR>Automorphism Group Information</OMSTR>
+	<OMSTR>C6</OMSTR>
+	<OMSTR>Automorphism Group Size</OMSTR>
+	<OMI>6</OMI>
+<OMA>
+	<OMS name="List" cd="list1"/>
+	<OMSTR>Generators</OMSTR>
+	<OMA>
+		<OMS name="Permutation" cd="permut1"/>
+		<OMI>2</OMI>
+		<OMI>3</OMI>
+		<OMI>4</OMI>
+		<OMI>5</OMI>
+		<OMI>6</OMI>
+		<OMI>1</OMI>
+	</OMA>
+</OMA>
+</OMA>
+<OMA>
+	<OMS name="List" cd="list1"/>
+	<OMSTR>Permutations</OMSTR>
+	<OMA>
+		<OMS name="Permutation" cd="permut1"/>
+		<OMI>1</OMI>
+		<OMI>2</OMI>
+		<OMI>3</OMI>
+		<OMI>4</OMI>
+		<OMI>5</OMI>
+		<OMI>6</OMI>
+	</OMA>
+</OMA>
+</OMOBJ>
+			]]>
+		</programlisting>
+		We enter that above information into the program as follows:
+		<programlisting format="linespecific">
+			<![CDATA[
+$ java -jar CS4099_MajorSP_transform.jar -iresults.xml -srecheck.txt
+			]]>
+		</programlisting>
+		From this we expect to see the following console output that details the
+		transformation process. 
+				<programlisting format="linespecific">
+			<![CDATA[
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Saving Information
+INFO - Information Saved
+			]]>
+		</programlisting>
+		When we check the
+		<literal>recheck.txt</literal>
+		file we should expect to see the following:
+		<programlisting format="linespecific">
+			<![CDATA[
+#BeginMetadata
+#Size=6
+#AutoGroup=C6
+#AutoGroupSize=6
+#Generators=[2,3,4,5,6,1]
+#EndMetadata
+[1,2,3,4,5,6]
+			]]>
+		</programlisting>
+	</sect1>
+</chapter>

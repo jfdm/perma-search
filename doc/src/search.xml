@@ -1,0 +1,208 @@
+<chapter id="search">
+	<title>SearchSystem</title>
+	<sect1>
+		<title>Overview</title>
+		This chapter contains a user guide and tutorial for the
+		SearchSystem. The SearchSystem has been designed to search for
+		permutation codes using lists of permutations that have been
+		constructed using the Permutation Generator GAP program.
+	</sect1>
+	<sect1>
+		<title>User Guide</title>
+		<sect2>
+			<title>Program Parameters</title>
+			The table below out lines the programs input.
+			<table frame='all'>
+				<caption>Program Parameters</caption>
+				<tgroup cols='2' align='center' colsep='1' rowsep='1'>
+					<thead>
+						<row>
+							<entry>flag</entry>
+							<entry>argument</entry>
+							<entry>Required</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>-f</entry>
+							<entry>
+								The file containing the permutations
+							</entry>
+							<entry>yes</entry>
+						</row>
+						<row>
+							<entry>-d</entry>
+							<entry>
+								The Hamming Distance to search for.
+							</entry>
+							<entry>yes</entry>
+						</row>
+						<row>
+							<entry>-s</entry>
+							<entry>
+								The name of the file to be used to store
+								the results
+							</entry>
+							<entry>no</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</sect2>
+		<sect2>
+			<title>Running the Program</title>
+			To run the program enter the following command followed by
+			the flag, variable pairs described in the previous section.
+			<programlisting format="linespecific">
+				<![CDATA[
+$ java -jar CS4099_MajorSP_search.jar -f<name of file> 
+-d<hamming distance> -s<name of results file>
+			]]>
+			</programlisting>
+			When the program is running the console will display the
+			current progress of the search and the progress of
+			the saving of the results. The results of the search can be
+			found in the file specified at input and the programs
+			progress will also be found in the console output and a file
+			named log.txt
+		</sect2>
+	</sect1>
+	<sect1>
+		<title>Tutorial</title>
+		This tutorial will illustrate how to use the program to search
+		for a
+		<literal>4,4</literal>
+		code and save the results into a file called
+		<literal>results.xml</literal>
+		, where the input file is called
+		<literal>input.txt</literal>
+
+		Our program input will consist of the following:
+		<itemizedlist>
+			<listitem>
+				Input file name
+				<literal>input.txt</literal>
+			</listitem>
+			<listitem>
+				Hamming Distance
+				<literal>4</literal>
+			</listitem>
+			<listitem>
+				Results File name
+				<literal>results.xml</literal>
+			</listitem>
+		</itemizedlist>
+		The contents of the input file is:
+		<programlisting format="linespecific">
+			<![CDATA[
+#BeginMetadata
+#Size=4
+#AutoGroup=NONE
+#EndMetadata
+[ 1, 2, 3, 4 ]
+[ 4, 2, 3, 1 ]
+[ 2, 4, 3, 1 ]
+[ 3, 2, 4, 1 ]
+[ 1, 4, 3, 2 ]
+[ 4, 1, 3, 2 ]
+[ 2, 1, 3, 4 ]
+[ 3, 1, 4, 2 ]
+[ 1, 3, 4, 2 ]
+[ 4, 3, 1, 2 ]
+[ 2, 3, 1, 4 ]
+[ 3, 4, 1, 2 ]
+[ 1, 2, 4, 3 ]
+[ 4, 2, 1, 3 ]
+[ 2, 4, 1, 3 ]
+[ 3, 2, 1, 4 ]
+[ 1, 4, 2, 3 ]
+[ 4, 1, 2, 3 ]
+[ 2, 1, 4, 3 ]
+[ 3, 1, 2, 4 ]
+[ 1, 3, 2, 4 ]
+[ 4, 3, 2, 1 ]
+[ 2, 3, 4, 1 ]
+[ 3, 4, 2, 1 ]
+
+			]]>
+		</programlisting>
+		We enter that above information into the program as follows:
+		<programlisting format="linespecific">
+			<![CDATA[
+$ java -jar CS4099_MajorSP.jar -finput.txt -d4 -sresults.xml
+			]]>
+		</programlisting>
+		From this we expect to see the following in our console during
+		the execution of the program.
+		<programlisting format="linespecific">
+			<![CDATA[
+INFO - Creating new Search Class
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 4
+INFO - Created new Simple Permutation Code with d = 4 and n = 4
+INFO - Performing Search
+INFO - Added Permutation 1,2,3,4,
+INFO - Added Permutation 3,1,4,2,
+INFO - Added Permutation 2,4,1,3,
+INFO - Added Permutation 4,3,2,1,
+INFO - Finished Search and returning results.
+INFO - Exporting Number of Codewords 4
+INFO - Exporting Hamming Distance 4
+INFO - Exported Permutations
+INFO - Data saved to Stream
+			]]>
+		</programlisting>
+		From this we can see a summary of the operation of the program.
+		It has found four codewords and has saved the results to a file.
+		If we look at the file we can verify the results.
+
+		<programlisting format="linespecific">
+			<![CDATA[
+<?xml version='1.0' encoding='UTF-8'?>
+<OMOBJ>
+	<OMA>
+		<OMSTR>Size of Permutations</OMSTR>
+		<OMI>4</OMI>
+		<OMSTR>Number of Codewords Found</OMSTR>
+		<OMI>4</OMI>
+		<OMSTR>Hamming Distance</OMSTR>
+		<OMI>4</OMI>
+	</OMA>
+	<OMA>
+		<OMS name="List" cd="list1"/>
+		<OMSTR>Permutations</OMSTR>
+        <OMA>
+        	<OMS name="Permutation" cd="permut1"/>
+        	<OMI>1</OMI>
+			<OMI>2</OMI>
+			<OMI>3</OMI>
+			<OMI>4</OMI>
+        </OMA>
+		<OMA>
+			<OMS name="Permutation" cd="permut1"/>
+			<OMI>3</OMI>
+			<OMI>1</OMI>
+			<OMI>4</OMI>
+			<OMI>2</OMI>
+		</OMA>
+		<OMA>
+			<OMS name="Permutation" cd="permut1"/>
+			<OMI>2</OMI>
+			<OMI>4</OMI>
+			<OMI>1</OMI>
+			<OMI>3</OMI>
+		</OMA>
+		<OMA>
+			<OMS name="Permutation" cd="permut1"/>
+			<OMI>4</OMI>
+			<OMI>3</OMI>
+			<OMI>2</OMI>
+			<OMI>1</OMI>
+		</OMA>
+	</OMA>
+</OMOBJ>
+			]]>
+		</programlisting>
+	</sect1>
+</chapter>

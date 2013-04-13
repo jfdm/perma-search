@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<!--File: log4jConfigFile.xml
+	
+	Author: Jan de Muijnck-Hughes
+	
+	Date:17 October 2007
+	
+	Description:
+	
+	Configures the log4j framework to output logging information
+	
+-->
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- STDOUT Appenders -->
+	<appender name="stdout-complex"
+		class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.TTCCLayout" />
+	</appender>
+	<appender name="stdout-simple"
+		class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.SimpleLayout" />
+	</appender>
+	<appender name="stdout-custom"
+		class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%-4r [%t] %-5p %c %x - %m%n" />
+		</layout>
+	</appender>
+
+	<!-- File Appenders -->
+	<appender name="file-custom"
+		class="org.apache.log4j.FileAppender">
+		<param name="File" value="./log.txt" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="%d{DATE} %-5p %-15c{1}: %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="file-simple"
+		class="org.apache.log4j.FileAppender">
+		<param name="File" value="./log.txt" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.SimpleLayout" />
+	</appender>
+
+	<appender name="file-complex"
+		class="org.apache.log4j.FileAppender">
+		<param name="File" value="./log.txt" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.TTCCLayout" />
+	</appender>
+
+	<!-- File XML format Appender -->
+	<appender name="file-xml" class="org.apache.log4j.FileAppender">
+		<param name="File" value="./log.txt" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.xml.XMLLayout" />
+	</appender>
+
+	<!-- LogFactor5 Appender -->
+	<appender name="logFactor5"
+		class="org.apache.log4j.lf5.LF5Appender">
+		<param name="MaxNumberOfRecords" value="1000" />
+	</appender>
+
+	<!-- LogFactor 5 style file Appender -->
+	<appender name="file-lf5" class="org.apache.log4j.FileAppender">
+		<param name="File" value="./lf5_log.txt" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[slf5s.start]%d{DATE}[slf5s.DATE]%n 
+%p[slf5s.PRIORITY]%n%x[slf5s.NDC]%n%t[slf5s.THREAD]%n%c[slf5s.CATEGORY]%n 
+%l[slf5s.LOCATION]%n%m[slf5s.MESSAGE]%n%n" />
+		</layout>
+	</appender>
+
+	<!-- Adds the Appenders to the Log4J infrastructure-->
+	<root>
+		<priority value="info" />
+		<appender-ref ref="stdout-simple" />
+		<appender-ref ref="file-simple" />
+	</root>
+
+</log4j:configuration>

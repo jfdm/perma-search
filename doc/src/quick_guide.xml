@@ -1,0 +1,170 @@
+<chapter id="qguide">
+	<title>Quick Guide</title>
+	<sect1>
+		<title>Introduction</title>
+		This chapter will provide a quick guide to the installation and
+		use of the java programs. For a more in-depth guide please
+		consult the installation and user guide chapters found later in
+		this document.
+	</sect1>
+	<sect1>
+		<title>Installing</title>
+		To install the programs you must first extract the project from
+		the archive, to compile the program enter:
+		<programlisting>$ ant build</programlisting>
+		To create the executable JAR files enter:
+		<programlisting>$ ant make-jars</programlisting>
+		You should now find the various programs executable in the
+		project folder, their names are as follows:
+		<itemizedlist>
+			<listitem>
+				SearchSystem
+				<literal>CS4099_MajorSP_search.jar</literal>
+			</listitem>
+			<listitem>
+				ResultsTransformer
+				<literal>CS4099_MajorSP_transform.jar</literal>
+			</listitem>
+			<listitem>
+				SearchValidate
+				<literal>CS4099_MajorSp_validate.jar</literal>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+	<sect1>
+		<title>Usage</title>
+		Please note that the flags are added to the end of command with
+		no space between a flag and its variable and a space between
+		each flag, variable pair.
+		<sect2>
+			<title>Search System</title>
+			The SearchSystem takes in the following arguments.
+			<table frame='all'>
+				<caption>Program Parameters</caption>
+				<tgroup cols='3' align='center' colsep='1' rowsep='1'>
+					<thead>
+						<row>
+							<entry>flag</entry>
+							<entry>argument</entry>
+							<entry>Required</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>-f</entry>
+							<entry>
+								The file containing the permutations
+							</entry>
+							<entry>yes</entry>
+						</row>
+						<row>
+							<entry>-d</entry>
+							<entry>
+								The Hamming Distance to search for.
+							</entry>
+							<entry>yes</entry>
+						</row>
+						<row>
+							<entry>-s</entry>
+							<entry>
+								The name of the file to be used to store
+								the results
+							</entry>
+							<entry>no</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+			The program can be invoked using the command:
+			<programlisting>
+				$ java -jar CS4099_MajorSP_search.jar
+			</programlisting>
+			An example is shown below, where the program arguments are
+			input file
+			<literal>sym_7.txt</literal>
+			, hamming distance
+			<literal>5</literal>
+			and the name of the results file to be
+			<literal>results.xml</literal>
+			:
+			<programlisting>
+				$ java -jar CS4099_MajorSP_search.jar -fsym_.txt -d5
+				-sresults.xml
+			</programlisting>
+		</sect2>
+		<sect2>
+			<title>Results Transformer</title>
+			The ResultsTransformer takes in the following arguments.
+			<table frame='all'>
+				<caption>Program Parameters</caption>
+				<tgroup cols='2' align='center' colsep='1' rowsep='1'>
+					<thead>
+						<row>
+							<entry>flag</entry>
+							<entry>argument</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>-i</entry>
+							<entry>
+								The file containing the results file.
+							</entry>
+						</row>
+						<row>
+							<entry>-s</entry>
+							<entry>
+								The name given to the output file.
+							</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+			The program can be invoked using the command:
+			<programlisting>
+				$ java -jar CS4099_MajorSP_transform.jar
+			</programlisting>
+			An example is shown below, where the program arguments are
+			input file
+			<literal>results.xml</literal>
+			, name of output file
+			<literal>output.txt</literal>
+			:
+			<programlisting>
+				$ java -jar CS4099_MajorSP_transform.jar -iresults.xml
+				-soutput.txt
+			</programlisting>
+		</sect2>
+		<sect2>
+			<title>Validate Search</title>
+			The ValidateSearch program takes in the following arguments.
+			<table frame='all'>
+				<caption>Program Parameters</caption>
+				<tgroup cols='2' align='center' colsep='1' rowsep='1'>
+					<thead>
+						<row>
+							<entry>flag</entry>
+							<entry>argument</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>-f</entry>
+							<entry>The name of the input file.</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+			The program can be invoked using the command:
+			<programlisting>
+				$ java -jar CS4099_MajorSP_validate.jar
+			</programlisting>
+			An example is shown below, where the program arguments are
+			input file
+			<literal>results.xml</literal>:
+			<programlisting>
+				$ java -jar CS4099_MajorSP_validate.jar -fresults.xml
+			</programlisting>
+		</sect2>
+	</sect1>
+</chapter>

@@ -1,0 +1,446 @@
+<chapter id="mainten">
+	<title>Maintenance</title>
+	<sect1>
+		<title>Software Structure</title>
+		The project directory is divided into several folders. Below we
+		describe the folders, their contents and the supporting files.
+		For more information regarding the structure of the software
+		listings, please consult the Doxygen documentation in the
+		<literal>doc</literal>
+		folder.
+		<itemizedlist>
+			<listitem>
+				<para>
+					<literal>src:</literal>
+					contains the source code for the java project and is
+					divided into several packages depending of the
+					source files usage. More information regarding the
+					structure of the software can be found in the
+					<literal>doc</literal>
+					folder.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>data:</literal>
+					contains the
+					<literal>log4j</literal>
+					configuration file and the files used as part of the
+					J-Unit tests.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>doc:</literal>
+					contains the generated source documentation for the
+					project.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>junit:</literal>
+					contains the
+					<literal>XML</literal>
+					and
+					<literal>HTML</literal>
+					junit reports created as part of the junit tests.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>lib</literal>
+					: contains the external libraries used in the java
+					project. These libraries are the
+					<literal>junit-4.4.jar</literal>
+					used during the building process.
+					<literal>log4j.jar</literal>
+					: used for logging the systems operation.
+					<literal>openmath_lib.jar</literal>
+					: the modified
+					<literal>OpenMath</literal>
+					library for generating the output file of the
+					SearchSystem.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>project_doc:</literal>
+					contains the project used to build this document.
+					More information is given in the next section.
+
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>build.xml</literal>
+					this is the ant build file for the project. The
+					various targets are used to build, compile, test and
+					generate the JAR files.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>Doxyfile</literal>
+					this is the configuration file for the Doxygen
+					documentation.
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>LICENSE.txt</literal>
+					This contains the GNU license for the project.
+				</para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+	<sect1>
+		<title>Documentation Information</title>
+		<sect2>
+			<title>Overview</title>
+			This documentation is a docbook based document and is
+			handled as a sub project of the main java project. This sub
+			project contains the majority of tools necessary to generate
+			the documentation. The project structure is as follows:
+			<itemizedlist>
+				<listitem>
+					<para>
+						<literal>bin:</literal>
+						contains generated output formats for the
+						documentation.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>css:</literal>
+						contains the css style sheets for the html
+						output documentation.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>docbook-xml</literal>
+						contains the docbook specification.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>docbook-xsl</literal>
+						contains XSLT stylesheets for creating the html
+						documentation. These files come from the docbook
+						xsl project on sourceforge.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>lib:</literal>
+						contains various external jars that allow for
+						the creation of fo files used for pdf creation.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>src:</literal>
+						contains source files for the document.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>build.xml</literal>
+						this is the ant build file for the project. The
+						various targets are used to build the
+						documentation.
+					</para>
+				</listitem>
+			</itemizedlist>
+		</sect2>
+		<sect2>
+			<title>Building</title>
+			To build the documentation you must have the following
+			installed.
+			<important>
+				Before you build the documentation you must locate your
+				systems XSLT processor on MAC OS X this is
+				<literal>/usr/bin/xsltproc</literal>
+				and modify the
+				<literal>build.xml</literal>
+				to add the location of the processor. This variable that
+				needs changing is clearly marked in the build file.
+			</important>
+
+			<itemizedlist>
+				<listitem>
+					<para>
+						<literal>Ant 1.7</literal>
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>Java 1.5</literal>
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<literal>XSLT Processor</literal>
+					</para>
+				</listitem>
+			</itemizedlist>
+
+			The following commands are used to generate the
+			documentation.
+			<itemizedlist>
+				<listitem>
+					<para>
+						<programlisting>
+							$ ant build-html
+						</programlisting>
+						Generates the HTML documentation.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<programlisting>$ ant build-pdf</programlisting>
+						Generates the PDF documentation.
+					</para>
+				</listitem>
+				<listitem>
+					<para>
+						<programlisting>$ ant all</programlisting>
+						Generates all documentation.
+					</para>
+				</listitem>
+			</itemizedlist>
+			For information regarding th other commands available please
+			use the command:
+			<programlisting>$ ant usage</programlisting>
+
+		</sect2>
+	</sect1>
+
+	<sect1>
+		<title>File Information</title>
+		<sect2>
+			<title>Input File</title>
+			Below we will discuss the format of the Input File, the
+			program will look for certain properties within this file
+			and deviation from the format is bad.
+			<sect3>
+				<title>Metadata</title>
+				The first couple of lines in the file should contain
+				information regarding to the construction of the lists.
+				This section of the file begins and ends with the
+				following tags.
+				<programlisting format="linespecific">
+					<![CDATA[
+#BeginMetaData
+.
+.
+.
+#EndMetaData
+			]]>
+				</programlisting>
+				The information regard the construction must include the
+				following.
+
+				<sect4>
+					<title>Size</title>
+					The number of elements in a Permutation e.g. For the
+					Symmetric Group Five this number would be five.
+					<programlisting>#Size=5</programlisting>
+				</sect4>
+				<sect4>
+					<title>Automorphism Group</title>
+					Indicates if an Automorphism Group was used in
+					construction by specifying the GAP textual
+					description of its structure. If the value is
+					<literal>NONE</literal>
+					then there will be no more information in the
+					Metadata for the construction.
+					<programlisting>#AutoGroup=NONE</programlisting>
+					Other wise if there is a value then more information
+					concerning the construction will follow.
+					<programlisting>#AutoGroup=C5</programlisting>
+				</sect4>
+				The next parameters are concerned with lists constructed
+				using Automorphism Groups.
+
+				<sect4>
+					<title>Automorphism Group Size</title>
+					Indicates the number of words with in the
+					Automorphism Group.
+					<programlisting>#SizeAutoGroup=5</programlisting>
+				</sect4>
+				<sect4>
+					<title>Automorphism Group Generators</title>
+					Represents the generators of the automorphism group,
+					depending on the group there may be one or many
+					generators, each of which needs to be on a seperate
+					line. The words themselves should be delineated by
+					square brackets and each element should be seperated
+					by a comma e.g.
+					<programlisting>
+						#Generators=[ 2, 3, 4 5, 1 ]
+					</programlisting>
+				</sect4>
+				<sect4>
+					<title>Examples of Metadata</title>
+					Below are two complete examples of the Metadata that
+					can be used with the program.
+					<sect5>
+						<title>No Automorphism Group Specified</title>
+						<programlisting format="linespecific">
+							<![CDATA[
+#BeginMetadata
+#Size=5
+#AutoGroup=NONE
+#EndMetadata
+			]]>
+						</programlisting>
+					</sect5>
+					<sect5>
+						<title>Automorphism Group Specified</title>
+						<programlisting format="linespecific">
+							<![CDATA[
+#BeginMetadata
+#Size=5
+#AutoGroup=C5
+#SizeAutoGroup=5
+#Generators=[ 2, 3, 4, 5, 1 ]
+#EndMetadata
+			]]>
+						</programlisting>
+					</sect5>
+				</sect4>
+			</sect3>
+			<sect3>
+				<title>Permutation Lists</title>
+				The permutations that are to be given to the program
+				should come after the metadata section and each
+				permutation should be on a new line. Each permutation
+				should be delineated by square brackets and each element
+				should be separated by a comma e.g. For the permutations
+				<literal>12345,12354,12435,12453</literal>
+				, the representation will be:
+				<programlisting format="linespecific">
+					<![CDATA[
+[ 1, 2, 3, 4, 5 ]
+[ 1, 2, 3, 5, 4 ]
+[ 1, 2, 4, 3, 5 ]
+[ 1, 2, 4, 5, 3 ]
+			]]>
+				</programlisting>
+			</sect3>
+		</sect2>
+		<sect2>
+			<title>Results File</title>
+			The results of the search are stored in an xml file named
+			after the value of the
+			<literal>-s</literal>
+			. This XML file conforms to the OpenMath standard for
+			mathematical objects. The contents of the file are as
+			follows:
+			<sect3>
+				<title>Permutation Code Information</title>
+				Contains the total number of Codewords found, the size
+				of the premutations and the specified Hamming Distance.
+				Below is an example from the search for a
+				<literal>(5,4)</literal>
+				code.
+				<programlisting format="linespecific">
+					<![CDATA[
+<OMA>
+	<OMSTR>Size of Permutations</OMSTR>
+	<OMI>5</OMI>
+	<OMSTR>Number of Codewords Found</OMSTR>
+	<OMI>20</OMI>
+	<OMSTR>Hamming Distance</OMSTR>
+	<OMI>4</OMI>
+</OMA>
+			]]>
+				</programlisting>
+			</sect3>
+			<sect3>
+				<title>Automorphism Group Information</title>
+				If an Automorphism Group was specified during the lists
+				construction the section of the file will provide the
+				textual description of the group, the number of words
+				with in the group and the generators of the group. For
+				example for the Cyclic Group Five would be represented
+				as:
+				<programlisting format="linespecific">
+					<![CDATA[
+<OMA>
+	<OMSTR>Automorphism Group Information</OMSTR>
+	<OMSTR>C5</OMSTR>
+	<OMSTR>Automorphism Group Size</OMSTR>
+	<OMI>5</OMI>
+	<OMA>
+		<OMS name="List" cd="list1"/>
+		<OMSTR>Generators</OMSTR>
+		<OMA>
+			<OMS name="Permutation" cd="permut1"/>
+			<OMI>2</OMI>
+			<OMI>3</OMI>
+			<OMI>4</OMI>
+			<OMI>5</OMI>
+			<OMI>1</OMI>
+		</OMA>
+	</OMA>
+</OMA>	
+			]]>
+				</programlisting>
+			</sect3>
+			<sect3>
+				<title>List of Codewords</title>
+				The rest of the openmath flie represents the codewords
+				of the permutation group. If the input list was
+				constructed using automorphism groups, then this list
+				will represent the representatives of the oribts that
+				contain the codewords, otherwise the full list of
+				codewords will be represented. For example the results
+				of the
+				<literal>(5,4)</literal>
+				, where there was a cyclic shift would have the
+				following list of codewords, where each codeword is the
+				orbit representative.
+				<programlisting format="linespecific"><![CDATA[
+<OMA>
+	<OMS name="List" cd="list1"/>
+	<OMSTR>Permutations</OMSTR>
+	<OMA>
+		<OMS name="Permutation" cd="permut1"/>
+		<OMI>1</OMI>
+		<OMI>2</OMI>
+		<OMI>3</OMI>
+		<OMI>4</OMI>
+		<OMI>5</OMI>
+	</OMA>
+	<OMA>
+		<OMS name="Permutation" cd="permut1"/>
+		<OMI>1</OMI>
+		<OMI>3</OMI>
+		<OMI>5</OMI>
+		<OMI>2</OMI>
+		<OMI>4</OMI>
+	</OMA>
+	<OMA>
+		<OMS name="Permutation" cd="permut1"/>
+		<OMI>1</OMI>
+		<OMI>4</OMI>
+		<OMI>2</OMI>
+		<OMI>5</OMI>
+		<OMI>3</OMI>
+	</OMA>
+	<OMA>
+		<OMS name="Permutation" cd="permut1"/>
+		<OMI>1</OMI>
+		<OMI>5</OMI>
+		<OMI>4</OMI>
+		<OMI>3</OMI>	
+		<OMI>2</OMI>
+	</OMA>
+</OMA>
+]]></programlisting>
+			</sect3>
+		</sect2>
+	</sect1>
+</chapter>

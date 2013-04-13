@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!-- ================================================================
+Copyright (C) 2007-2008 
+ 			Jan de Muijnck-Hughes <jfdm@st-andrews.ac.uk>
+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+See LICENSE.txt for details
+================================================================ -->
+<CD xmlns="http://www.openmath.org/OpenMathCD">
+	<CDName>CS4099_MajorSP_openmath_cd</CDName>
+	<CDDescription></CDDescription>
+	<CDVersion>1</CDVersion>
+	<CDRevision>0</CDRevision>
+	<CDReviewDate>2008-05-18</CDReviewDate>
+	<CDStatus>private</CDStatus>
+	<CDURL>
+		http://www.cs.st-andrews.ac.uk/~jfdm/CS4099/cd/CS4099_MajorSP_openmath_cd.ocd
+	</CDURL>
+
+	<CDBase>http://www.cs.st-andrews.ac.uk/~jfdm/CS4099/cd</CDBase>
+	<CDDefinition>
+		<Name>pcodeinfo</Name>
+		<Role>application</Role>
+		<Description>
+			Denotes a series of integers that represent an (N,d,M)
+			permutation code. The first integer (N) represents the
+			number of elements in a code word. The second integer (D)
+			represents the Hamming Distance between codewords. THe third
+			represents (M) the total number of codewords in the coding.
+		</Description>
+		<Example>
+			The (5,5,5) code
+			<OMOBJ>
+				<OMA>
+					<OMS cd="CS4099_MajorSP_openmath_cd"
+						name="pcodeinfo" />
+					<OMSTR>Size of Permutations</OMSTR>
+					<OMI>5</OMI>
+					<OMSTR>Hamming Distance</OMSTR>
+					<OMI>5</OMI>
+					<OMSTR>Number of Codewords Found</OMSTR>
+					<OMI>5</OMI>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+	<CDDefinition>
+		<Name>autogroupinfo</Name>
+		<Role>application</Role>
+		<Description>
+			Describes the Automorphism Group used in the search for a
+			permutation code. The first part of the application contains
+			the textual description of the Automorpism Group as used in
+			GAP, http://www.gap-system.org and the number of elements in
+			the group, specified as String and Integer respectivly. The
+			next part contains a list of the generators of the
+			automorphism group. See the example for more information.
+		</Description>
+		<Example>
+			The Automorphism Group C5.
+			<OMOBJ>
+				<OMA>
+
+					<OMS cd="CS4099_MajorSP_openmath_cd"
+						name="autogroupinfo" />
+					<OMSTR>Automorphism Group Information</OMSTR>
+					<OMSTR>C5</OMSTR>
+					<OMSTR>Automorphism Group Size</OMSTR>
+					<OMI>5</OMI>
+					<OMA>
+						<OMS name="List" cd="list1" />
+
+						<OMSTR>Generators</OMSTR>
+						<OMA>
+							<OMS name="Permutation" cd="permut1" />
+							<OMI>1</OMI>
+							<OMI>2</OMI>
+							<OMI>3</OMI>
+							<OMI>4</OMI>
+							<OMI>5</OMI>
+						</OMA>
+					</OMA>
+				</OMA>
+			</OMOBJ>
+		</Example>
+	</CDDefinition>
+</CD>

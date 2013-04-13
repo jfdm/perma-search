@@ -1,0 +1,7 @@
+#BeginMetadata
+#Size=5
+#AutoGroup=C5
+#AutoGroupSize=5
+#Generators=[ 2, 3, 4, 5, 1 ]
+#EndMetadata
+[ 1, 2, 3, 4, 5 ]

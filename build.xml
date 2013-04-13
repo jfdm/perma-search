@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright (C) 2007-2008 
+  			Jan de Muijnck-Hughes <jfdm@st-andrews.ac.uk>
+ 
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  
+  See LICENSE.txt for details
+-->
+<project name="CS4099_MajorSP" default="usage" basedir=".">
+
+	<!-- Main Folder Set -->
+	<property name="src" value="src" />
+	<property name="bin" value="bin" />
+	<property name="lib" value="lib" />
+	<property name="javadoc" value="javadoc" />
+	<property name="junit" value="junit" />
+	<property name="doxygendoc" value="doc" />
+
+	<!-- Executable file Names -->
+	<property name="jar_name_search" value="${ant.project.name}_search.jar" />
+	<property name="jar_name_transform" value="${ant.project.name}_transform.jar" />
+	<property name="jar_name_validate" value="${ant.project.name}_validate.jar" />
+
+	<!-- Compiler Arguements-->
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="target" value="1.6.0_07" />
+	<property name="source" value="1.6.0_07" />
+
+	<!-- Project Class Path -->
+	<path id="project.classpath">
+		<pathelement location="bin" />
+		<!-- External Libraries -->
+		<fileset dir="${basedir}/">
+			<include name="lib/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- ================================= 
+	          target: usage
+	          Prints simple usage information telling users how to find out build targets.              
+	         ================================= -->
+	<target name="usage" description="Prints the Ant build.xml usage">
+		<echo message="Use -projecthelp or -p , to get a list of the available targets." />
+	</target>
+
+	<!-- ================================= 
+	          target: init
+	         Sets up               
+	         ================================= -->
+	<target name="init">
+		<mkdir dir="${bin}" />
+		<mkdir dir="${junit}" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="${src}" excludes="**/*.launch, **/*.java" />
+		</copy>
+	</target>
+
+	<!-- ================================= 
+	          target: clean
+	         Removes the binaries and junit test report information.           
+	         ================================= -->
+	<target name="clean" description="Removes previous build">
+		<delete dir="${bin}" />
+		<delete dir="${junit}" />
+	</target>
+
+	<!-- ================================= 
+	          target: cleanAll
+	         Prepares the directory for committing to repository.             
+	         ================================= -->
+	<target name="cleanAll" description="Cleans all tmp folders from project.">
+		<antcall target="clean" />
+		<delete dir="${doxygendoc}" />
+		<delete>
+			<fileset dir="${basedir}">
+				<include name="${jar_name_search}" />
+				<include name="${jar_name_transform}" />
+				<include name="${jar_name_validate}" />
+			</fileset>
+		</delete>
+
+	</target>
+
+	<!-- ================================= 
+	          target: build
+	         Compiles all the Java Files.          
+	         ================================= -->
+	<target name="build" depends="init" description="Builds the project">
+		<echo message="${ant.project.name}: ${ant.file}" />
+		<javac debug="true" debuglevel="${debuglevel}" destdir="${bin}">
+			<src path="${src}" />
+			<classpath refid="project.classpath" />
+		</javac>
+
+	</target>
+
+	<!-- ================================= 
+	          target: test
+	         Runs all the Junit Tests in the project.
+	         ================================= -->
+	<target name="test" depends="build" description="tests the build">
+		<delete dir="${junit}" />
+		<mkdir dir="${junit}/xml" />
+		<mkdir dir="${junit}/report" />
+		<echo message="Running J-Unit Tests" />
+		<junit printsummary="yes">
+			<classpath refid="project.classpath" />
+			<formatter type="xml" />
+			<batchtest fork="yes" todir="${junit}/xml">
+				<fileset dir="${src}" includes="**/*Test*.java" />
+			</batchtest>
+		</junit>
+		<echo message="Building Report" />
+		<junitreport todir="${junit}">
+			<fileset dir="${junit}/xml" includes="TEST-*.xml" />
+			<report todir="${junit}/report" />
+		</junitreport>
+	</target>
+
+	<!-- ================================= 
+	          target: api
+	        Builds the Javadoc for the project.
+	         ================================= -->
+	<target name="api" description="Generates the API documentation">
+		<mkdir dir="${javadoc}" />
+		<javadoc destdir="${javadoc}" doctitle="${ant.project.name}" source="${source}">
+			<fileset dir="${src}" defaultexcludes="yes">
+				<include name="**/*.java" />
+				<exclude name="**/*Test.java" />
+			</fileset>
+		</javadoc>
+	</target>
+
+	<!-- ================================= 
+	          target: make-jars
+	        Generate all the Java Executables for the project.
+	         ================================= -->
+	<target name="make-jars" description="Creates all the JAR files">
+		<antcall target="make-jar-search" />
+		<antcall target="make-jar-transform" />
+		<antcall target="make-jar-validate" />
+	</target>
+
+	<!-- ================================= 
+	          target: make-jar-search
+	       Builds the executable for the search program.
+	         ================================= -->
+	<target name="make-jar-search" description="Creates a Jar File to run the search" depends="build">
+		<echo message="Copying stuff" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="${src}" excludes="**/*Test.java" />
+		</copy>
+		<echo message="Jar build" />
+		<jar destfile="${jar_name_search}" basedir="${bin}">
+			<manifest>
+				<attribute name="Main-Class" value="uk.ac.stand.cs.jfdm.cs4099.search.Main" />
+				<attribute name="Class-Path" value="lib/log4j.jar lib/openmath_lib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- ================================= 
+	          target: make-jar-validate
+	       Builds the executable for the validate search program.
+	         ================================= -->
+	<target name="make-jar-validate" description="Creates a Jar File to validate a results file" depends="build">
+		<echo message="Copying stuff" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="${src}" excludes="**/*Test.java" />
+		</copy>
+		<echo message="Jar build" />
+		<jar destfile="${jar_name_validate}" basedir="${bin}">
+			<manifest>
+				<attribute name="Main-Class" value="uk.ac.stand.cs.jfdm.cs4099.validate.Main" />
+				<attribute name="Class-Path" value="lib/log4j.jar lib/openmath_lib.jar" />
+			</manifest>
+		</jar>
+	</target>
+
+	<!-- ================================= 
+	          target: make-jar-transform
+	       Builds the executable for the the transformation program.
+	         ================================= -->
+	<target name="make-jar-transform" description="Creates a Jar File to transform results file to input file" depends="build">
+		<echo message="Copying stuff" />
+		<copy includeemptydirs="false" todir="bin">
+			<fileset dir="${src}" excludes="**/*Test.java" />
+		</copy>
+		<echo message="Jar build" />
+		<jar destfile="${jar_name_transform}" basedir="${bin}">
+			<manifest>
+				<attribute name="Main-Class" value="uk.ac.stand.cs.jfdm.cs4099.transform.Main" />
+				<attribute name="Class-Path" value="lib/log4j.jar lib/openmath_lib.jar" />
+			</manifest>
+		</jar>
+	</target>
+</project>

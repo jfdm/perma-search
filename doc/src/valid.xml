@@ -1,0 +1,96 @@
+<chapter id="valid">
+	<title>ValidateSearch</title>
+	<sect1>
+		<title>Overview</title>
+		This chapter contains a user guide and tutorial for the
+		ValidateSearch program. The ValidateSearch program has been
+		designed take the results of the SearchSystem that used
+		automorphisms and expands each of the representatives and uses
+		these permutations to construct the proposed code.
+	</sect1>
+	<sect1>
+		<title>User Guide</title>
+		<sect2>
+			<title>Program Parameters</title>
+			The table below out lines the programs input.
+			<table frame='all'>
+				<caption>Program Parameters</caption>
+				<tgroup cols='3' align='center' colsep='1' rowsep='1'>
+					<thead>
+						<row>
+							<entry>flag</entry>
+							<entry>argument</entry>
+						</row>
+					</thead>
+					<tbody>
+						<row>
+							<entry>-f</entry>
+							<entry>
+								The file containing the results.
+							</entry>
+						</row>
+					</tbody>
+				</tgroup>
+			</table>
+		</sect2>
+		<sect2>
+			<title>Running the Program</title>
+			To run the program enter the following command followed by
+			the flag, variable pairs described in the previous section.
+			<programlisting format="linespecific">
+				<![CDATA[
+$ java -jar CS4099_MajorSP_validate.jar -f<name of results file> 
+			]]>
+			</programlisting>
+			When the program is running the console will display the
+			current progress of the validation. Once the program has
+			finished validating the results it will display at the end
+			the final results of the validation. The programs progress
+			will also be found in the console output and a file named
+			log.txt
+		</sect2>
+	</sect1>
+	<sect1>
+		<title>Tutorial</title>
+		In this tutorial we will use the ValidateSearch program to
+		validate the results of a search that produced the
+		<literal>6,5</literal>
+		code. The results of the search is located in the file called
+		<literal>results.xml</literal>
+		, the contents of which can be found in the Tutorial for the
+		ResultsTransformer. We enter name of the file into the program
+		as follows:
+		<programlisting format="linespecific">
+			<![CDATA[
+$ java -jar CS4099_MajorSP_validate.jar -fresults.xml
+			]]>
+		</programlisting>
+		From this we expect to see the following console output that
+		details the transformation process.
+		<programlisting format="linespecific">
+			<![CDATA[
+INFO - Initialising new Validation Search
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Created new Simple Permutation Code with d = 5 and n = 6
+INFO - Performing Validation Search
+INFO - Added Permutation [1,2,3,4,5,6]
+INFO - Added Permutation [6,1,2,3,4,5]
+INFO - Added Permutation [5,6,1,2,3,4]
+INFO - Added Permutation [4,5,6,1,2,3]
+INFO - Added Permutation [3,4,5,6,1,2]
+INFO - Added Permutation [2,3,4,5,6,1]
+INFO - Valid Result
+INFO - Expected Result = 6
+INFO - Actual Result = 6
+			]]>
+		</programlisting>
+		As we see from the listing above the result we have is valid.
+	</sect1>
+</chapter>

@@ -1,0 +1,14 @@
+################################
+
+file: TODO.txt
+
+Contains the jobs needed for this project.
+
+author:  Jan de Muijnck-Hughes
+contact: jfdm@st-andrews.ac.uk
+date:    01/04/2008
+################################
+
+
+
+1. Change the build file to have conditional properties for the xsltproc.

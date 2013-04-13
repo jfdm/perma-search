@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "//OASIS//DTD DocBook XML V4.5//EN" "../docbook-xml/docbookx.dtd" 
+[
+<!ENTITY bookinfo SYSTEM "manualinfo.xml">
+<!ENTITY qguide SYSTEM "quick_guide.xml">
+<!ENTITY install SYSTEM "install.xml">
+<!ENTITY search SYSTEM "search.xml">
+<!ENTITY transform SYSTEM "transform.xml">
+<!ENTITY valid SYSTEM "valid.xml">
+<!ENTITY mainten SYSTEM "mainten.xml">
+<!ENTITY licence SYSTEM "gfdl.xml">
+]>
+<book>
+	&bookinfo;
+	&qguide;
+	&install;
+	&search;
+	&transform;
+	&valid;
+	&mainten;
+	&licence;
+</book>

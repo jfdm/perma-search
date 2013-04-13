@@ -1,0 +1,708 @@
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created IPermutationCode with distance 3 and no elements 4
+INFO - Distance is correct
+INFO - No of elements is correct
+INFO - End of Test
+INFO - Begining Testing of Expansion
+INFO - Created Generator 23451
+INFO - Created Expected Results
+INFO - Created ComplexPermutationCode
+INFO - Created Representative 12345
+INFO - Expanding Representative
+INFO - Checking Expected results against results
+INFO - Size is correct 5
+INFO - Permutation 1 matches [1,2,3,4,5]
+INFO - Permutation 1 matches [5,1,2,3,4]
+INFO - Permutation 1 matches [4,5,1,2,3]
+INFO - Permutation 1 matches [3,4,5,1,2]
+INFO - Permutation 1 matches [2,3,4,5,1]
+INFO - Begin Testing Addition of Permutations
+INFO - Created Generator 23451
+INFO - Permutations Created
+INFO - Begin Test 1
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Test 1 complete
+INFO - Begin Test 2
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Test 2 complete
+INFO - Begin Test 3
+INFO - Test 3 complete
+INFO - End of Test
+INFO - Testing creation of a permutation
+INFO - Created Permutation
+INFO - Finishsed Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created permutations 1234, 1243
+INFO - Distance has been calculated
+INFO - End of Test
+INFO - Testing Multiplication of a permutations
+INFO - Created Permutations
+INFO - Multipling 12345 and 23451
+INFO - Checking Results
+INFO - Finishsed Test
+INFO - Testing Feasibility Method
+INFO - Created Orbits
+INFO - Begin Test 1 Feasible Orbit
+INFO - Orbit is feasible
+INFO - Finishsed Test 1
+INFO - Begin Test 2 Non-Feasible Orbit
+INFO - Orbit is not feasible
+INFO - Finishsed Test 2
+INFO - Finishsed Test
+INFO - Testing Expansion Method
+INFO - Created Generators
+INFO - Created Permutation representative
+INFO - Created Expected output 
+INFO - Expanded Permutation
+INFO - Checking number of results
+INFO - Number of expected Permutations is correct:5
+INFO - Checking results
+INFO - Output contains: [1,2,3,4,5]
+INFO - Output contains: [5,1,2,3,4]
+INFO - Output contains: [4,5,1,2,3]
+INFO - Output contains: [3,4,5,1,2]
+INFO - Output contains: [2,3,4,5,1]
+INFO - Finishsed Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created IPermutationCode with distance 3 and no elements 4
+INFO - Distance is correct
+INFO - No of elements is correct
+INFO - End of Test
+INFO - Begin Testing Addition of Permutations
+INFO - Permutations Created
+INFO - Begin Test 1
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Test 1 complete
+INFO - Begin Test 2
+INFO - Added Permutation [1,2,5,3,4]
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Test 2 complete
+INFO - Begin Test 3
+INFO - Test 3 complete
+INFO - End of Test
+INFO - Testing extraction of contents from input file
+INFO - Generated Expected Data
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 4
+INFO - File has been read in
+INFO - Metadata extracted successfully
+INFO - Begin Test 1 Testing existance of Size metadata
+INFO - Size exists
+INFO - Finishsed Test 1
+INFO - Begin Test 2 Extracting Automorphism Data
+INFO - Automorphism Group Present
+INFO - Description Correct
+INFO - Generators Correct
+INFO - Test 2 complete
+INFO - Test Finished
+INFO - Testing access to extracted contents
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 4
+INFO - Testing reading of permutation 1
+INFO - Permutation [1,2,3,4]  matches
+INFO - Permutation 1 has been read in
+INFO - Testing reading of permutation 2
+INFO - Permutation [1,2,3,4]  matches
+INFO - Permutation 2 has been read in
+INFO - Finishsed Test
+INFO - Begin Testing of exportation 
+INFO - Created new Simple Permutation Code with d = 3 and n = 5
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Added Permutation [1,2,5,3,4]
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Permutation Code created
+INFO - ResultsExporter and results stream created.
+INFO - Adding Permutation Code info
+INFO - Exporting Number of Codewords 4
+INFO - Exporting Hamming Distance 3
+INFO - Adding Permutation Code
+INFO - Exported Permutations
+INFO - Saving to Stream
+INFO - Data saved to Stream
+INFO - Checking contents of saved data.
+INFO - Permutations where saved correctly
+INFO - Test complete
+INFO - Begin Testing of exportation of Permutations
+INFO - Automorphism Info  created
+INFO - Created new Complex Permutation Code with d = 3 and n = 5
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Complex Permutation Code created
+INFO - ResultsExporter and results stream created.
+INFO - Adding Permutation Code Information
+INFO - Exporting Number of Codewords 10
+INFO - Exporting Hamming Distance 3
+INFO - Adding Automorphism Information
+INFO - Exported Automorphism Group Information
+INFO - Adding Permutation Code
+INFO - Exported Permutations
+INFO - Saving to Stream
+INFO - Data saved to Stream
+INFO - Checking contents of saved data.
+INFO - Permutations where saved correctly
+INFO - Test complete
+INFO - Testing search for Permutation Code with Hamming Distance 5, size of permutation 5
+INFO - Creating new Search Class
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 5
+INFO - Created new Simple Permutation Code with d = 5 and n = 5
+INFO - Set up search
+INFO - Performing Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Added Permutation [4,3,1,5,2]
+INFO - Added Permutation [5,4,2,1,3]
+INFO - Added Permutation [3,5,4,2,1]
+INFO - Added Permutation [2,1,5,3,4]
+INFO - Finished Search and returning results.
+INFO - Checking Expected results against results
+INFO - Number of code words was expected
+INFO - Permutation 1 matches
+INFO - Permutation 2 matches
+INFO - Permutation 3 matches
+INFO - Permutation 4 matches
+INFO - Permutation 5 matches
+INFO - Results the same
+INFO - End of Test
+INFO - Testing search for Permutation Code with Hamming Distance 5, size of permutation 5
+INFO - Creating new Search Class
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 5
+INFO - Created new Complex Permutation Code with d = 5 and n = 5
+INFO - Set up search
+INFO - Performing Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Finished Search and returning results.
+INFO - Checking Expected results against results
+INFO - Number of code words was expected
+INFO - Permutation 1 matches
+INFO - Results the same
+INFO - End of Test
+INFO - Begining Testing of Result File Transformation
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Saving Information
+INFO - Information Saved
+INFO - Getting Results to check
+INFO - Getting Expected Results
+INFO - Permutations where saved correctly
+INFO - End of Test
+INFO - Begin Testing of Detail Extraction
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Hamming Distance Equal
+INFO - Number of CodeWords Equal
+INFO - End of Test
+INFO - Begin testing validation search
+INFO - Initialising new Validation Search
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Created new Simple Permutation Code with d = 5 and n = 5
+INFO - Loaded in file
+INFO - Performing Validation Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Added Permutation [5,1,2,3,4]
+INFO - Added Permutation [4,5,1,2,3]
+INFO - Added Permutation [3,4,5,1,2]
+INFO - Added Permutation [2,3,4,5,1]
+INFO - Performing search
+INFO - Checking results
+INFO - Expected number of results found
+INFO - Valid Result
+INFO - Expected Result = 5
+INFO - Actual Result = 5
+INFO - Results file contains a valid permutation code.
+INFO - End of Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created IPermutationCode with distance 3 and no elements 4
+INFO - Distance is correct
+INFO - No of elements is correct
+INFO - End of Test
+INFO - Begining Testing of Expansion
+INFO - Created Generator 23451
+INFO - Created Expected Results
+INFO - Created ComplexPermutationCode
+INFO - Created Representative 12345
+INFO - Expanding Representative
+INFO - Checking Expected results against results
+INFO - Size is correct 5
+INFO - Permutation 1 matches [1,2,3,4,5]
+INFO - Permutation 1 matches [5,1,2,3,4]
+INFO - Permutation 1 matches [4,5,1,2,3]
+INFO - Permutation 1 matches [3,4,5,1,2]
+INFO - Permutation 1 matches [2,3,4,5,1]
+INFO - Begin Testing Addition of Permutations
+INFO - Created Generator 23451
+INFO - Permutations Created
+INFO - Begin Test 1
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Test 1 complete
+INFO - Begin Test 2
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Test 2 complete
+INFO - Begin Test 3
+INFO - Test 3 complete
+INFO - End of Test
+INFO - Testing creation of a permutation
+INFO - Created Permutation
+INFO - Finishsed Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created permutations 1234, 1243
+INFO - Distance has been calculated
+INFO - End of Test
+INFO - Testing Multiplication of a permutations
+INFO - Created Permutations
+INFO - Multipling 12345 and 23451
+INFO - Checking Results
+INFO - Finishsed Test
+INFO - Testing Feasibility Method
+INFO - Created Orbits
+INFO - Begin Test 1 Feasible Orbit
+INFO - Orbit is feasible
+INFO - Finishsed Test 1
+INFO - Begin Test 2 Non-Feasible Orbit
+INFO - Orbit is not feasible
+INFO - Finishsed Test 2
+INFO - Finishsed Test
+INFO - Testing Expansion Method
+INFO - Created Generators
+INFO - Created Permutation representative
+INFO - Created Expected output 
+INFO - Expanded Permutation
+INFO - Checking number of results
+INFO - Number of expected Permutations is correct:5
+INFO - Checking results
+INFO - Output contains: [1,2,3,4,5]
+INFO - Output contains: [5,1,2,3,4]
+INFO - Output contains: [4,5,1,2,3]
+INFO - Output contains: [3,4,5,1,2]
+INFO - Output contains: [2,3,4,5,1]
+INFO - Finishsed Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created IPermutationCode with distance 3 and no elements 4
+INFO - Distance is correct
+INFO - No of elements is correct
+INFO - End of Test
+INFO - Begin Testing Addition of Permutations
+INFO - Permutations Created
+INFO - Begin Test 1
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Test 1 complete
+INFO - Begin Test 2
+INFO - Added Permutation [1,2,5,3,4]
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Test 2 complete
+INFO - Begin Test 3
+INFO - Test 3 complete
+INFO - End of Test
+INFO - Testing extraction of contents from input file
+INFO - Generated Expected Data
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 4
+INFO - File has been read in
+INFO - Metadata extracted successfully
+INFO - Begin Test 1 Testing existance of Size metadata
+INFO - Size exists
+INFO - Finishsed Test 1
+INFO - Begin Test 2 Extracting Automorphism Data
+INFO - Automorphism Group Present
+INFO - Description Correct
+INFO - Generators Correct
+INFO - Test 2 complete
+INFO - Test Finished
+INFO - Testing access to extracted contents
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 4
+INFO - Testing reading of permutation 1
+INFO - Permutation [1,2,3,4]  matches
+INFO - Permutation 1 has been read in
+INFO - Testing reading of permutation 2
+INFO - Permutation [1,2,3,4]  matches
+INFO - Permutation 2 has been read in
+INFO - Finishsed Test
+INFO - Begin Testing of exportation 
+INFO - Created new Simple Permutation Code with d = 3 and n = 5
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Added Permutation [1,2,5,3,4]
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Permutation Code created
+INFO - ResultsExporter and results stream created.
+INFO - Adding Permutation Code info
+INFO - Exporting Number of Codewords 4
+INFO - Exporting Hamming Distance 3
+INFO - Adding Permutation Code
+INFO - Exported Permutations
+INFO - Saving to Stream
+INFO - Data saved to Stream
+INFO - Checking contents of saved data.
+INFO - Permutations where saved correctly
+INFO - Test complete
+INFO - Begin Testing of exportation of Permutations
+INFO - Automorphism Info  created
+INFO - Created new Complex Permutation Code with d = 3 and n = 5
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Complex Permutation Code created
+INFO - ResultsExporter and results stream created.
+INFO - Adding Permutation Code Information
+INFO - Exporting Number of Codewords 10
+INFO - Exporting Hamming Distance 3
+INFO - Adding Automorphism Information
+INFO - Exported Automorphism Group Information
+INFO - Adding Permutation Code
+INFO - Exported Permutations
+INFO - Saving to Stream
+INFO - Data saved to Stream
+INFO - Checking contents of saved data.
+INFO - Permutations where saved correctly
+INFO - Test complete
+INFO - Testing search for Permutation Code with Hamming Distance 5, size of permutation 5
+INFO - Creating new Search Class
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 5
+INFO - Created new Simple Permutation Code with d = 5 and n = 5
+INFO - Set up search
+INFO - Performing Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Added Permutation [4,3,1,5,2]
+INFO - Added Permutation [5,4,2,1,3]
+INFO - Added Permutation [3,5,4,2,1]
+INFO - Added Permutation [2,1,5,3,4]
+INFO - Finished Search and returning results.
+INFO - Checking Expected results against results
+INFO - Number of code words was expected
+INFO - Permutation 1 matches
+INFO - Permutation 2 matches
+INFO - Permutation 3 matches
+INFO - Permutation 4 matches
+INFO - Permutation 5 matches
+INFO - Results the same
+INFO - End of Test
+INFO - Testing search for Permutation Code with Hamming Distance 5, size of permutation 5
+INFO - Creating new Search Class
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 5
+INFO - Created new Complex Permutation Code with d = 5 and n = 5
+INFO - Set up search
+INFO - Performing Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Finished Search and returning results.
+INFO - Checking Expected results against results
+INFO - Number of code words was expected
+INFO - Permutation 1 matches
+INFO - Results the same
+INFO - End of Test
+INFO - Begining Testing of Result File Transformation
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Saving Information
+INFO - Information Saved
+INFO - Getting Results to check
+INFO - Getting Expected Results
+INFO - Permutations where saved correctly
+INFO - End of Test
+INFO - Begin Testing of Detail Extraction
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Hamming Distance Equal
+INFO - Number of CodeWords Equal
+INFO - End of Test
+INFO - Begin testing validation search
+INFO - Initialising new Validation Search
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Created new Simple Permutation Code with d = 5 and n = 5
+INFO - Loaded in file
+INFO - Performing Validation Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Added Permutation [5,1,2,3,4]
+INFO - Added Permutation [4,5,1,2,3]
+INFO - Added Permutation [3,4,5,1,2]
+INFO - Added Permutation [2,3,4,5,1]
+INFO - Performing search
+INFO - Checking results
+INFO - Expected number of results found
+INFO - Valid Result
+INFO - Expected Result = 5
+INFO - Actual Result = 5
+INFO - Results file contains a valid permutation code.
+INFO - End of Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created IPermutationCode with distance 3 and no elements 4
+INFO - Distance is correct
+INFO - No of elements is correct
+INFO - End of Test
+INFO - Begining Testing of Expansion
+INFO - Created Generator 23451
+INFO - Created Expected Results
+INFO - Created ComplexPermutationCode
+INFO - Created Representative 12345
+INFO - Expanding Representative
+INFO - Checking Expected results against results
+INFO - Size is correct 5
+INFO - Permutation 1 matches [1,2,3,4,5]
+INFO - Permutation 1 matches [5,1,2,3,4]
+INFO - Permutation 1 matches [4,5,1,2,3]
+INFO - Permutation 1 matches [3,4,5,1,2]
+INFO - Permutation 1 matches [2,3,4,5,1]
+INFO - Begin Testing Addition of Permutations
+INFO - Created Generator 23451
+INFO - Permutations Created
+INFO - Begin Test 1
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Test 1 complete
+INFO - Begin Test 2
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Test 2 complete
+INFO - Begin Test 3
+INFO - Test 3 complete
+INFO - End of Test
+INFO - Testing creation of a permutation
+INFO - Created Permutation
+INFO - Finishsed Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created permutations 1234, 1243
+INFO - Distance has been calculated
+INFO - End of Test
+INFO - Testing Multiplication of a permutations
+INFO - Created Permutations
+INFO - Multipling 12345 and 23451
+INFO - Checking Results
+INFO - Finishsed Test
+INFO - Testing Feasibility Method
+INFO - Created Orbits
+INFO - Begin Test 1 Feasible Orbit
+INFO - Orbit is feasible
+INFO - Finishsed Test 1
+INFO - Begin Test 2 Non-Feasible Orbit
+INFO - Orbit is not feasible
+INFO - Finishsed Test 2
+INFO - Finishsed Test
+INFO - Testing Expansion Method
+INFO - Created Generators
+INFO - Created Permutation representative
+INFO - Created Expected output 
+INFO - Expanded Permutation
+INFO - Checking number of results
+INFO - Number of expected Permutations is correct:5
+INFO - Checking results
+INFO - Output contains: [1,2,3,4,5]
+INFO - Output contains: [5,1,2,3,4]
+INFO - Output contains: [4,5,1,2,3]
+INFO - Output contains: [3,4,5,1,2]
+INFO - Output contains: [2,3,4,5,1]
+INFO - Finishsed Test
+INFO - Begining Testing of Hamming Distance Calculation
+INFO - Created IPermutationCode with distance 3 and no elements 4
+INFO - Distance is correct
+INFO - No of elements is correct
+INFO - End of Test
+INFO - Begin Testing Addition of Permutations
+INFO - Permutations Created
+INFO - Begin Test 1
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Test 1 complete
+INFO - Begin Test 2
+INFO - Added Permutation [1,2,5,3,4]
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Test 2 complete
+INFO - Begin Test 3
+INFO - Test 3 complete
+INFO - End of Test
+INFO - Testing extraction of contents from input file
+INFO - Generated Expected Data
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 4
+INFO - File has been read in
+INFO - Metadata extracted successfully
+INFO - Begin Test 1 Testing existance of Size metadata
+INFO - Size exists
+INFO - Finishsed Test 1
+INFO - Begin Test 2 Extracting Automorphism Data
+INFO - Automorphism Group Present
+INFO - Description Correct
+INFO - Generators Correct
+INFO - Test 2 complete
+INFO - Test Finished
+INFO - Testing access to extracted contents
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 4
+INFO - Testing reading of permutation 1
+INFO - Permutation [1,2,3,4]  matches
+INFO - Permutation 1 has been read in
+INFO - Testing reading of permutation 2
+INFO - Permutation [1,2,3,4]  matches
+INFO - Permutation 2 has been read in
+INFO - Finishsed Test
+INFO - Begin Testing of exportation 
+INFO - Created new Simple Permutation Code with d = 3 and n = 5
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Added Permutation [1,2,5,3,4]
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Permutation Code created
+INFO - ResultsExporter and results stream created.
+INFO - Adding Permutation Code info
+INFO - Exporting Number of Codewords 4
+INFO - Exporting Hamming Distance 3
+INFO - Adding Permutation Code
+INFO - Exported Permutations
+INFO - Saving to Stream
+INFO - Data saved to Stream
+INFO - Checking contents of saved data.
+INFO - Permutations where saved correctly
+INFO - Test complete
+INFO - Begin Testing of exportation of Permutations
+INFO - Automorphism Info  created
+INFO - Created new Complex Permutation Code with d = 3 and n = 5
+INFO - Added Permutation [5,4,3,2,1]
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Complex Permutation Code created
+INFO - ResultsExporter and results stream created.
+INFO - Adding Permutation Code Information
+INFO - Exporting Number of Codewords 10
+INFO - Exporting Hamming Distance 3
+INFO - Adding Automorphism Information
+INFO - Exported Automorphism Group Information
+INFO - Adding Permutation Code
+INFO - Exported Permutations
+INFO - Saving to Stream
+INFO - Data saved to Stream
+INFO - Checking contents of saved data.
+INFO - Permutations where saved correctly
+INFO - Test complete
+INFO - Testing search for Permutation Code with Hamming Distance 5, size of permutation 5
+INFO - Creating new Search Class
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 5
+INFO - Created new Simple Permutation Code with d = 5 and n = 5
+INFO - Set up search
+INFO - Performing Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Added Permutation [4,3,1,5,2]
+INFO - Added Permutation [5,4,2,1,3]
+INFO - Added Permutation [3,5,4,2,1]
+INFO - Added Permutation [2,1,5,3,4]
+INFO - Finished Search and returning results.
+INFO - Checking Expected results against results
+INFO - Number of code words was expected
+INFO - Permutation 1 matches
+INFO - Permutation 2 matches
+INFO - Permutation 3 matches
+INFO - Permutation 4 matches
+INFO - Permutation 5 matches
+INFO - Results the same
+INFO - End of Test
+INFO - Testing search for Permutation Code with Hamming Distance 5, size of permutation 5
+INFO - Creating new Search Class
+INFO - Importing Permutation information
+INFO - Extracting Metadata
+INFO - Extracted Size = 5
+INFO - Created new Complex Permutation Code with d = 5 and n = 5
+INFO - Set up search
+INFO - Performing Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Finished Search and returning results.
+INFO - Checking Expected results against results
+INFO - Number of code words was expected
+INFO - Permutation 1 matches
+INFO - Results the same
+INFO - End of Test
+INFO - Begining Testing of Result File Transformation
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Saving Information
+INFO - Information Saved
+INFO - Getting Results to check
+INFO - Getting Expected Results
+INFO - Permutations where saved correctly
+INFO - End of Test
+INFO - Begin Testing of Detail Extraction
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Hamming Distance Equal
+INFO - Number of CodeWords Equal
+INFO - End of Test
+INFO - Begin testing validation search
+INFO - Initialising new Validation Search
+INFO - Creating new Results Transformer
+INFO - Reading In Input File
+INFO - Parsing Information
+INFO - Extracting Permutation Code Information
+INFO - Extracting Automorphism Group Information
+INFO - 	Extracting Permutations
+INFO - Extracting Representatives.
+INFO - 	Extracting Permutations
+INFO - Created new Simple Permutation Code with d = 5 and n = 5
+INFO - Loaded in file
+INFO - Performing Validation Search
+INFO - Added Permutation [1,2,3,4,5]
+INFO - Added Permutation [5,1,2,3,4]
+INFO - Added Permutation [4,5,1,2,3]
+INFO - Added Permutation [3,4,5,1,2]
+INFO - Added Permutation [2,3,4,5,1]
+INFO - Performing search
+INFO - Checking results
+INFO - Expected number of results found
+INFO - Valid Result
+INFO - Expected Result = 5
+INFO - Actual Result = 5
+INFO - Results file contains a valid permutation code.
+INFO - End of Test

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<OMOBJ>
+	<OMA>
+		<OMS name="pcodeinfo" cd="CS4099_MajorSP_openmath_cd" />
+		<OMSTR>Size of Permutations</OMSTR>
+		<OMI>5</OMI>
+		<OMSTR>Hamming Distance</OMSTR>
+		<OMI>5</OMI>
+		<OMSTR>Number of Codewords Found</OMSTR>
+		<OMI>5</OMI>
+	</OMA>
+	<OMA>
+		<OMS name="autogroupinfo" cd="CS4099_MajorSP_openmath_cd" />
+		<OMSTR>Automorphism Group Information</OMSTR>
+		<OMSTR>C5</OMSTR>
+		<OMSTR>Automorphism Group Size</OMSTR>
+		<OMI>5</OMI>
+		<OMA>
+			<OMS name="List" cd="list1" />
+			<OMSTR>Generators</OMSTR>
+			<OMA>
+				<OMS name="Permutation" cd="permut1" />
+				<OMI>2</OMI>
+				<OMI>3</OMI>
+				<OMI>4</OMI>
+				<OMI>5</OMI>
+				<OMI>1</OMI>
+			</OMA>
+		</OMA>
+	</OMA>
+	<OMA>
+		<OMS name="List" cd="list1" />
+		<OMSTR>Permutations</OMSTR>
+		<OMA>
+			<OMS name="Permutation" cd="permut1" />
+			<OMI>1</OMI>
+			<OMI>2</OMI>
+			<OMI>3</OMI>
+			<OMI>4</OMI>
+			<OMI>5</OMI>
+		</OMA>
+	</OMA>
+</OMOBJ>

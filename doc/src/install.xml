@@ -1,0 +1,99 @@
+<chapter id="install">
+	<title>Installation Guide</title>
+	<sect1>
+		<title>System Requirements</title>
+		To be able to compile and run the Java programs you must have
+		the following pieces of software installed.
+		<itemizedlist>
+			<listitem>
+				<para>
+					<literal>Java 1.5</literal>
+				</para>
+			</listitem>
+			<listitem>
+				<para>
+					<literal>Ant 1.7</literal>
+				</para>
+			</listitem>
+		</itemizedlist>
+	</sect1>
+	<sect1>
+		<title>Building and Testing</title>
+		To compile the java programs, first extract the contents of the
+		archive and place the resulting directory where you wish to
+		install the program. To compile the program enter the command:
+		<programlisting>$ ant build</programlisting>
+		This command will ask ant to compile the program using Java. If
+		the build completed successfully you will see in the command
+		line output something similar to the following.
+		<programlisting format="linespecific">
+			<![CDATA[
+BUILD SUCCESSFUL
+Total time: 10 seconds
+]]>
+		</programlisting>
+		To test the installation of the program enter the command:
+		<programlisting>$ ant test</programlisting>
+		This will perform a series of predefined JUnit tests that will
+		assert the programs correctness. from the JUnit tests and just
+		before the command prompt something similar to the following:
+		<programlisting format="linespecific">
+			<![CDATA[
+BUILD SUCCESSFUL
+Total time: 10 seconds
+]]>
+		</programlisting>
+		More information regarding the results of the tests can be found
+		in the file
+		<literal>junit/report/index.html</literal>
+		. For more information regarding the build commands you can use
+		the following commands:
+		<programlisting>$ ant -p</programlisting>
+		<programlisting>$ ant usage</programlisting>
+	</sect1>
+	<sect1>
+		<title>Generating the Executables</title>
+		The commands to construct the executable JAR files for each of
+		the individual programs are illustrated below.
+		<important>
+			For the program to work successfully after installation, the
+			JAR file must be kept in the same directory that it was
+			created in as it depends on several libraries and files in
+			that directory.
+		</important>
+		<sect2>
+			<title>SearchSystem</title>
+			To generate the executable for the SearchSystem enter the
+			following command.
+			<programlisting>$ ant make-jar-search</programlisting>
+			This will generate a JAR file called
+			<literal>CS4099_MajorSP_search.jar</literal>
+			.
+		</sect2>
+		<sect2>
+			<title>ResultsTransformer</title>
+			To generate the executable for the ResultsTransformer enter
+			the following command.
+			<programlisting>$ ant make-jar-transform</programlisting>
+			This will generate a JAR file called
+			<literal>CS4099_MajorSP_transform.jar</literal>
+			.
+		</sect2>
+		<sect2>
+			<title>SearchSystem</title>
+			To generate the executable for the ValidateSearch program
+			enter the following command.
+			<programlisting>$ ant make-jar-validate</programlisting>
+			This will generate a JAR file called
+			<literal>CS4099_MajorSP_validate.jar</literal>
+			.
+		</sect2>
+		<sect2>
+			<title>All Programs</title>
+			To generate the executable for all the programs enter the
+			following command.
+			<programlisting>$ ant make-jars</programlisting>
+			This will generate the JAR files for all the programs.
+		</sect2>
+	</sect1>
+</chapter>
